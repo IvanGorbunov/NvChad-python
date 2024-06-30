@@ -41,11 +41,24 @@
 
 ## Install
 
-NVChad Install line: 
+Type in a terminal:
 
 ```bash
-git clone -b v2.0 https://github.com/IvanGorbunov/NvChad-python.git ~/.config/nvim --depth 1
+git clone -b v2.5 https://github.com/IvanGorbunov/NvChad-python.git ~/.config/nvim --depth 1
 ```
+Then run `nvim` in the terminal and type a command of installation:
+
+```
+:MasonInstallAll
+```
+
+Then rerun `nvim` in the terminal and type a command of installations of the server:
+
+```
+:TSInstall python
+```
+
+Then rerun `nvim`.
 
 ## Theme Showcase
 
