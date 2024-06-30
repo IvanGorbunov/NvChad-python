@@ -39,6 +39,14 @@
 
 - NvChad is supposed to be used with its [starter config](https://github.com/nvchad/starter), so nvchad main repo ( this repo ) can be imported as a plugin via lazy's import feature and then you can easily use this repo's modules like autocmds etc.
 
+## Install
+
+NVChad Install line: 
+
+```bash
+git clone -b v2.0 https://github.com/IvanGorbunov/NvChad-python.git ~/.config/nvim --depth 1
+```
+
 ## Theme Showcase
 
 <details><summary> <b>Images (Click to expand!)</b></summary>
