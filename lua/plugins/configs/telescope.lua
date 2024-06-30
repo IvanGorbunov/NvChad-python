@@ -1,5 +1,3 @@
-dofile(vim.g.base46_cache .. "telescope")
-
 local options = {
   defaults = {
     vimgrep_arguments = {
@@ -23,7 +21,6 @@ local options = {
       horizontal = {
         prompt_position = "top",
         preview_width = 0.55,
-        results_width = 0.8,
       },
       vertical = {
         mirror = false,
@@ -52,7 +49,6 @@ local options = {
   },
 
   extensions_list = { "themes", "terms" },
-  extensions = {},
 }
 
 return options
