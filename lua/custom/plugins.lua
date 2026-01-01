@@ -66,5 +66,17 @@ local plugins = {
       require "custom.configs.lspconfig"
     end,
   },
+  {
+    "hands-free-vim/talon.nvim",
+    config = function()
+      require("talon").setup()
+    end,
+  },
+  {
+    "hands-free-vim/cursorless.nvim",
+    config = function()
+      require("cursorless").setup()
+    end,
+  },
 }
 return plugins
