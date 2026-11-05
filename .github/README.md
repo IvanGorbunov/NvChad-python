@@ -49,12 +49,12 @@ sudo apt update
 sudo apt upgrade
 
 # Run the following commands
-curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
-chmod u+x nvim.appimage
-./nvim.appimage
+curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.appimage
+chmod u+x nvim-linux-x86_64.appimage
+./nvim-linux-x86_64.appimage
 
 # Run the following commands if the ./nvim.appimage command fails, try:
-./nvim.appimage --appimage-extract
+./nvim-linux-x86_64.appimage --appimage-extract
 ./squashfs-root/AppRun --version
 
 # Optional: exposing nvim globally.

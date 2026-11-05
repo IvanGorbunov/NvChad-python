@@ -359,6 +359,12 @@ M.nvterm = {
   },
 }
 
+M.neotree = {
+  n = {
+    ["<leader>e"] = { "<cmd>Neotree toggle<CR>", "Toggle Neo-tree" },
+  },
+}
+
 M.whichkey = {
   plugin = true,
 

@@ -192,20 +192,64 @@ local default_plugins = {
 
   -- file managing , picker etc
   {
-    "nvim-tree/nvim-tree.lua",
-    cmd = { "NvimTreeToggle", "NvimTreeFocus" },
+    "nvim-neo-tree/neo-tree.nvim",
+    branch = "v3.x",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons",
+      "MunifTanjim/nui.nvim",
+    },
+    cmd = "Neotree",
     init = function()
-      require("core.utils").load_mappings "nvimtree"
+      require("core.utils").load_mappings "neotree"
     end,
-    opts = function()
-      return require "plugins.configs.nvimtree"
-    end,
-    config = function(_, opts)
-      dofile(vim.g.base46_cache .. "nvimtree")
-      require("nvim-tree").setup(opts)
+    config = function()
+      require("neo-tree").setup({
+        close_if_last_window = true,
+        enable_git_status = true,
+        enable_diagnostics = true,
+        filesystem = {
+          filtered_items = {
+            hide_dotfiles = false,
+            hide_gitignored = false,
+          },
+          follow_current_file = {
+            enabled = true
+          },
+        },
+        window = {
+          position = "left",
+          width = 30,
+          mappings = {
+            ["<space>"] = {
+              "toggle_node",
+              nowait = true,
+            },
+            ["a"] = {
+              "add",
+              config = {
+                show_path = "none" -- "none", "relative", "absolute"
+              }
+            },
+            ["d"] = "delete",
+            ["r"] = "rename",
+            ["c"] = "copy_to_clipboard",
+            ["x"] = "cut_to_clipboard",
+            ["p"] = "paste_from_clipboard",
+            ["q"] = "close_window",
+          },
+        },
+        default_component_configs = {
+          indent = {
+            with_expanders = true,
+            expander_collapsed = "",
+            expander_expanded = "",
+          },
+        },
+      })
     end,
   },
-
+  
   {
     "nvim-telescope/telescope.nvim",
     dependencies = { "nvim-treesitter/nvim-treesitter" },
